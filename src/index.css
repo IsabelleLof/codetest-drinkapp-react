@@ -1,4 +1,7 @@
 body {
   max-width: 1200px;
-  margin: auto;
+  margin: 40px;
+  margin: 0;
+  background-color: #0f121f;
+  color: #465464;
 }

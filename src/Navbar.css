@@ -1,0 +1,10 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    display: flex;
+}
+
+input {
+    width: 550px;
+}

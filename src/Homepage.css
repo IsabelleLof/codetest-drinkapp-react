@@ -1,11 +1,43 @@
+.grid-container {
+        display: grid;
+        grid-template-columns: 668px 451px;
+        margin: auto;
+        grid-gap: 10px;
+}
+
 .cocktail-container {
     display: flex;
-    flex-direction: column;
     max-width: 1200px;
     margin: auto;
     flex-wrap: wrap;
     gap: 30px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-
+    border: 1px solid black;
 }
+
+.cards-container-button {
+    display: flex;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.cards-button {
+    width: 50px;
+    height: 50px;
+    background-color: #2b2f3f;
+    color: #ffff;
+    border: none;
+    border-radius: 5px;
+}
+
+.toaster-container-item3 {
+    margin-left: 681px;
+    border: 1px solid black;
+    width: 400px;
+    height: 120px;
+}
+
+.shoppinglist-container-item2 {
+}
+
+
+

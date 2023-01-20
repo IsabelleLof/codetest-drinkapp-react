@@ -1,8 +1,25 @@
 .cocktail-card {
-    border: 1px solid black;
-    width: 500px;
+    display: flex;
 }
 
 .cocktail-image {
-    width: 200px;
+    display: flex;
+    width: 170px;
 }
+
+.cocktail-name-description {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-top: -25px;
+}
+
+.cocktail-name {
+    color: #2b2f3f;
+    padding-left: 10px;
+}
+
+.cocktail-instructions {
+    padding-left: 10px;
+}
+
