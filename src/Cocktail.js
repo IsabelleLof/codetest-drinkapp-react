@@ -5,9 +5,9 @@ export default function Cocktail (props) {
 
     //console.log(props)
 
-    const [cocktail, setCocktail] = React.useState([])
+    //const [cocktail, setCocktail] = React.useState([])
 
-    const [selectedCocktail, setSelectedCocktail] = React.useState('')
+    //const [selectedCocktail, setSelectedCocktail] = React.useState('')
 
     
 

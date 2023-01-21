@@ -2,15 +2,15 @@ import React from "react";
 import { ShoppingListContext } from "./ShoppingListContext";
 
 
-export default function ListItems() {
+export default function ListItems(props) {
     const { listItems } = React.useContext(ShoppingListContext);
+    console.log(listItems);
     return (
         <div>
             <h1>Shopping List</h1>
-            {listItems.map( cocktail => (
+            {listItems.map( newListItem => (
                 <ul>
-                <h1>{cocktail.strDrink}</h1>
-                 <li></li>
+                  <li>{newListItem.strDrink}</li>
                 </ul>
             ))}
         </div>

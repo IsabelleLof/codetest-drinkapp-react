@@ -11,31 +11,44 @@ import ListItems from './ListItems';
 export default function Homepage (props) {
     // Experiment with state in react
     // React use state is a react hook
-    const [loading, setLoading] = useState(false);
-    const [data, setData] = useState([]);
     const [cocktails, setCocktails] = React.useState([]);
 
     const { addToListItems } = React.useContext(ShoppingListContext);
+    //console.log(addToListItems);
 
+    // React useEffect hook
 
-    const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
-
-    const fetchCocktailHandler = useCallback(() => {
-        setLoading(true);
-
-        axios
-          .get(url)
-          .then((res) => {
-              console.log(res.data);
-              setData(res.data.drinks);
-          })
-          .catch((e) => console.log(e))
-          .finally(() => setLoading(false));
+    // componentDidMount example (api calls or functions when the page loads)
+    React.useEffect(() => {
+        console.log('we are fetching our products')
+        fetchCocktails()
     }, []);
 
-    useEffect(() => {
-        fetchCocktailHandler();
-    }, [fetchCocktailHandler]);
+    // runs every render (runs every time props or state changes)
+    // React.useEffect(() => {});
+
+    // runs after update of products but can be used for any state value
+    React.useEffect(() => {
+        console.log('We have a full list of products')
+    }, [cocktails]);
+
+    // componentWillUnmount
+    // React.useEffect(() => {
+        
+    //     return () => {
+
+    //     }
+    // })
+  
+
+    const fetchCocktails = () => {
+        // experiment with calling the api
+        // combine the api and state
+        axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
+        .then((response) => {
+            setCocktails(response.data.drinks)
+        })
+    }
 
     return (
         <div className='grid-container'>
@@ -48,15 +61,15 @@ export default function Homepage (props) {
 
                 {
                 // Put some products inside the state and map them with or without an api
-                data
+                cocktails
                 .filter((cocktail) => {
                     return props.cocktailSearchValue !== '' && props.isSearchConfirmed 
                     ? cocktail.strDrink.toLowerCase().includes(props.cocktailSearchValue.toLowerCase()) ? cocktail : null
                     : cocktail
                 }).map((cocktail) => (
                     <div className='cards-container-button'>
-                     <Cocktail key={data.drinks} cocktail={cocktail} />
-                       <button className='cards-button' onClick={() => addToListItems(data)}>+</button>
+                     <Cocktail key={cocktails.drinks} cocktail={cocktail} />
+                       <button className='cards-button' onClick={() => addToListItems(cocktail)}>+</button>
                     </div>
                         
                 )
