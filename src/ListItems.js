@@ -17,8 +17,6 @@ export default function ListItems(props) {
                 <ul>
                   <li>{newListItem.strIngredient1}</li>
                   <li>{newListItem.strIngredient2}</li>
-                  <li>{newListItem.strIngredient3}</li>
-                  <li>{newListItem.strIngredient4}</li>
                 </ul>
             ))}
         </div>

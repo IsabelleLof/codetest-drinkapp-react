@@ -18,6 +18,7 @@ export default function Homepage (props) {
 
     const { addToListItems } = React.useContext(ShoppingListContext);
     const { displayToasts } = React.useContext(ToastContext);
+    //const { addToPrintItems } = React.useContext
     //console.log(addToListItems);
 
     //useEffect hook
@@ -67,7 +68,7 @@ export default function Homepage (props) {
                 <ListItems />
             </div>
             <div className='toaster-container-item3'>
-            <Toasts toasters={['toast1', 'toast2']} /> 
+            <Toasts toasters={['toast1', 'toast2']} />
             </div>
             <div>
                 <dialog>

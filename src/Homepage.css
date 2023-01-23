@@ -31,15 +31,16 @@
     border-radius: 5px;
 }
 
-.toaster-container-item3 {
-    margin-left: 681px;
-    width: 400px;
-    height: 120px;
-}
-
 .shoppinglist-container-item2 {
     border: 1px solid black;
     background-color: #121626;
+    height: fit-content;
+}
+
+.print-button {
+    background-blend-mode: overlay;
+    display: flex;
+    margin-left: auto;
 }
 
 

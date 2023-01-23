@@ -10,3 +10,9 @@
     padding: 15px;
     margin-top: 15px;
 }
+
+.print-button {
+    background-blend-mode: overlay;
+    display: flex;
+    margin-left: auto;
+}

@@ -10,6 +10,7 @@ export default function Toasts({toasters}) {
     return (
         <div>
             {toasters.map(( toast ) => ((<div className="toast">{toast}</div>)))}
+            <button>Print</button>
         </div>
     );
 }
