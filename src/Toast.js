@@ -4,15 +4,17 @@ import './Toast.css';
 
 export default function Toast (props) {
 
+    //Just notes
+    
     //console.log(props)
 
     //const [cocktail, setCocktail] = React.useState([])
 
     //const [selectedCocktail, setSelectedCocktail] = React.useState('')
 
+    //Maybe for the ToastContext
+
     
-
-
     return (
         <div className='coctail-card-container'>
             <div className='cocktail-card'>

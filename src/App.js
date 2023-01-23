@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Homepage from '../src/Homepage';
@@ -7,7 +7,6 @@ import Navbar from './Navbar';
 import ShoppingListContextProvider from './ShoppingListContext';
 import ListItems from './ListItems';
 import ShoppingListCard from './ShoppingListCard';
-import Toaster from './Toaster';
 import ToastContextProvider from './ShoppingListContext';
 
 export default function App() {
@@ -41,7 +40,7 @@ const cocktailSearchSubmit = (cocktailSearchValue) => {
   return (
     <div>
     <BrowserRouter>
-      <ToastContextProvider value={['toasts']}>
+      <ToastContextProvider>
       <ShoppingListContextProvider>
       <Navbar 
           handleCocktailSearchInput={handleCocktailSearchInput} 

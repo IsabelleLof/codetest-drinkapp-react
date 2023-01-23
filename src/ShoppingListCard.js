@@ -1,8 +1,10 @@
 import React from "react";
 import './ShoppingListCard.css';
-import Cocktail from "../src/Cocktail";
+import Cocktail from "../src/Cocktail.js";
 
 function ShoppingListCard (props) {
+
+    //just for testing
 
 
 

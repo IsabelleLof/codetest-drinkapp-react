@@ -1,17 +1,18 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cocktail from "../src/Cocktail";
-import Toast from "../src/Toast";
 import './Homepage.css';
-import { ShoppingListContext } from './ShoppingListContext';
 import Toasts from './Toasts';
-import Navbar from './Navbar';
 import ListItems from './ListItems';
+
+import { ShoppingListContext } from './ShoppingListContext';
 import { ToastContext } from './ToastContext';
 
 export default function Homepage (props) {
     
     const [cocktails, setCocktails] = React.useState([]);
+
+    //For the ToastContext 
 
     const [toasts, setToasts] = useState([]);
 
@@ -66,7 +67,7 @@ export default function Homepage (props) {
                 <ListItems />
             </div>
             <div className='toaster-container-item3'>
-                <Toasts toasters={['toast1', 'toast2']} /> 
+            <Toasts toasters={['toast1', 'toast2']} /> 
             </div>
             <div>
                 <dialog>
