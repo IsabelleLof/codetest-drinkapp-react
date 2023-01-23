@@ -8,7 +8,7 @@ import ShoppingListContextProvider from './ShoppingListContext';
 import ListItems from './ListItems';
 import ShoppingListCard from './ShoppingListCard';
 import Toaster from './Toaster';
-
+import ToastContextProvider from './ShoppingListContext';
 
 export default function App() {
 
@@ -41,6 +41,7 @@ const cocktailSearchSubmit = (cocktailSearchValue) => {
   return (
     <div>
     <BrowserRouter>
+      <ToastContextProvider value={['toasts']}>
       <ShoppingListContextProvider>
       <Navbar 
           handleCocktailSearchInput={handleCocktailSearchInput} 
@@ -51,7 +52,8 @@ const cocktailSearchSubmit = (cocktailSearchValue) => {
       <Route exact path='/listItems' element={ <ListItems /> } />
       <Route exact path='/shoppingListCard' element={ <ShoppingListCard /> } />
       </Routes>
-      </ShoppingListContextProvider>   
+      </ShoppingListContextProvider>
+      </ToastContextProvider>   
     </BrowserRouter>      
 
     </div>

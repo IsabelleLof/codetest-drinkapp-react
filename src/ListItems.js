@@ -1,16 +1,24 @@
 import React from "react";
+import "./ListItems.css";
 import { ShoppingListContext } from "./ShoppingListContext";
+
+
+//Build a _print shopping button_ that displays a 'browser dialog'
+
 
 
 export default function ListItems(props) {
     const { listItems } = React.useContext(ShoppingListContext);
     console.log(listItems);
     return (
-        <div>
-            <h1>Shopping List</h1>
+        <div className="list-items-container">
+            <h1 className="list-items-title">Shopping List</h1>
             {listItems.map( newListItem => (
                 <ul>
-                  <li>{newListItem.strDrink}</li>
+                  <li>{newListItem.strIngredient1}</li>
+                  <li>{newListItem.strIngredient2}</li>
+                  <li>{newListItem.strIngredient3}</li>
+                  <li>{newListItem.strIngredient4}</li>
                 </ul>
             ))}
         </div>

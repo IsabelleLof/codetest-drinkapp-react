@@ -1,24 +1,26 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
 import Cocktail from "../src/Cocktail";
+import Toast from "../src/Toast";
 import './Homepage.css';
 import { ShoppingListContext } from './ShoppingListContext';
-import ShoppingListCard from './ShoppingListCard';
-import Toaster from './Toaster';
+import Toasts from './Toasts';
 import Navbar from './Navbar';
 import ListItems from './ListItems';
+import { ToastContext } from './ToastContext';
 
 export default function Homepage (props) {
-    // Experiment with state in react
-    // React use state is a react hook
+    
     const [cocktails, setCocktails] = React.useState([]);
 
+    const [toasts, setToasts] = useState([]);
+
     const { addToListItems } = React.useContext(ShoppingListContext);
+    const { displayToasts } = React.useContext(ToastContext);
     //console.log(addToListItems);
 
-    // React useEffect hook
+    //useEffect hook
 
-    // componentDidMount example (api calls or functions when the page loads)
     React.useEffect(() => {
         console.log('we are fetching our products')
         fetchCocktails()
@@ -31,20 +33,11 @@ export default function Homepage (props) {
     React.useEffect(() => {
         console.log('We have a full list of products')
     }, [cocktails]);
-
-    // componentWillUnmount
-    // React.useEffect(() => {
-        
-    //     return () => {
-
-    //     }
-    // })
   
 
     const fetchCocktails = () => {
-        // experiment with calling the api
-        // combine the api and state
-        axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita')
+
+        axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=')
         .then((response) => {
             setCocktails(response.data.drinks)
         })
@@ -53,15 +46,9 @@ export default function Homepage (props) {
     return (
         <div className='grid-container'>
 
-            {/* Within react you need to return a value or null */}
-            {/* For loop / if statement are statements */}
-            {/* ternary operators and array methods return a value */}
-            {/* <button onClick={fetchProducts}>Show Products</button> */}
             <div className='cocktail-container-item1'>
 
-                {
-                // Put some products inside the state and map them with or without an api
-                cocktails
+                {cocktails
                 .filter((cocktail) => {
                     return props.cocktailSearchValue !== '' && props.isSearchConfirmed 
                     ? cocktail.strDrink.toLowerCase().includes(props.cocktailSearchValue.toLowerCase()) ? cocktail : null
@@ -79,7 +66,12 @@ export default function Homepage (props) {
                 <ListItems />
             </div>
             <div className='toaster-container-item3'>
-                <Toaster />
+                <Toasts toasters={['toast1', 'toast2']} /> 
+            </div>
+            <div>
+                <dialog>
+                    Hej
+                </dialog>
             </div>
 
             

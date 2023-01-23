@@ -1,5 +1,6 @@
 .cocktail-card {
     display: flex;
+    background-color: #121626;
 }
 
 .cocktail-image {
